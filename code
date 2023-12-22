@@ -52,28 +52,14 @@ while user_input:
         stacked_bar=ax.bar(df["Treatment"], df[col_name3], bottom=df[col_name1]+df[col_name2], label=col_name3)
         #ax.legend()
         ax.legend(loc='center right', bbox_to_anchor=(1.25, 0.5))
-        ax.set_xticklabels(df["Treatment"], rotation=90)
+        plt.xticks(rotation=90)
         ax.set_ylabel(ylabel_plot)
         ax.set_xlabel(xlabel_plot)
         ax.set_title(title_plot)
         plt.show()
         return plt.show()
         
-        
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+       
         
     def barplot_with_statistics(df, col_name,title_plot,ylabel_plot,xlabel_plot, alpha_cutoff):
         mean_cell_phase=df.groupby(by="Treatment", sort=False).agg(mean=(col_name, "mean"))
